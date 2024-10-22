@@ -1,0 +1,1169 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/15/2024 5:07:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AFAGH"
+  DTS:CreatorName="AFAGH\sadat"
+  DTS:DTSID="{5A9AB876-A3F9-4BE1-97B4-96916F6A3DD1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{BC07CA75-A7B2-4C58-8344-AA8B88103FB6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[cust_forloop]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2244CDF4-A4A3-42AC-9E98-B9BBEF6A0FD6}"
+      DTS:ObjectName="cust_forloop">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Completepath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sadat\Documents\Translink_project\New yourk bus transit\MTA_Bus_Wait_Assessment1.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month"
+              DTS:DTSID="{D5D50D34-461E-488C-893C-CE1E5B266D53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="borough"
+              DTS:DTSID="{850A0DF2-FCA7-4B3B-8FDC-AAE78C7EB32D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="day_type"
+              DTS:DTSID="{D43B6521-D517-4209-BD9A-FEC3F4F1DB60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="trip_type"
+              DTS:DTSID="{999E8EA6-B454-4706-905F-573BC8407442}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="route_id"
+              DTS:DTSID="{DFA9A474-0D17-4C03-B98C-699A18D50F99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="period"
+              DTS:DTSID="{37F51FB3-11F7-4D75-8AAF-5F6F55D4427F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_trips_passing_wait"
+              DTS:DTSID="{5D9314B1-4F51-4A8C-A3E6-5E1AED36B207}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_scheduled_trips"
+              DTS:DTSID="{3E39C4CD-ADE8-4940-AFEC-4C8A86B50C3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="wait_assessment"
+              DTS:DTSID="{D519C551-52D3-43A8-BC2C-EC0312702D6C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.SSISdemo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2241FCAF-AD9E-414C-885B-4A1CF4C81637}"
+      DTS:ObjectName="LocalHost.SSISdemo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SSISdemo;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{2241FCAF-AD9E-414C-885B-4A1CF4C81637}LocalHost.SSISdemo;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MTA_Bus_Wait_File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0E614781-5B57-45DF-8F6D-2C510D05548B}"
+      DTS:ObjectName="MTA_Bus_Wait_File">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FullPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sadat\Documents\Translink_project\New yourk bus transit\MTA_Bus_Wait_Assessment.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month"
+              DTS:DTSID="{50448ECE-A0B0-4A01-B896-7B7819E4EDC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="borough"
+              DTS:DTSID="{CF4B84DC-77D0-4702-BFD0-14664E6A8665}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="day_type"
+              DTS:DTSID="{B7E6F010-18C1-4752-9361-B85E1776338D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="trip_type"
+              DTS:DTSID="{9B5BD9E0-7C44-416C-A468-CBA66FD8CA87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="route_id"
+              DTS:DTSID="{65539519-EC6E-472A-B7BD-654143E1AFAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="period"
+              DTS:DTSID="{D72B2236-5697-400B-A12C-431F1D8320CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_trips_passing_wait"
+              DTS:DTSID="{4DE6687A-1ED8-452E-8C77-4ECB5C8E36B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_scheduled_trips"
+              DTS:DTSID="{B8D56BA1-A526-410B-A662-06C2D658E23F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="wait_assessment"
+              DTS:DTSID="{A07522BA-72D0-4880-A376-B213CFA9B478}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EDFF00CB-4340-4D03-8EE0-E1B2DC289106}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="cnt">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D79AF39E-9C75-433C-925A-F898731A43C6}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FilePath] +  (DT_WSTR, 2) @[User::cnt]+&quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Completepath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\sadat\Documents\Translink_project\New yourk bus transit\MTA_Bus_Wait_Assessment1.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62DA8CC3-7AC2-4D2C-B28C-DC9DA46A1384}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\sadat\Documents\Translink_project\New yourk bus transit\MTA_Bus_Wait_Assessment</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8951BAC1-465F-46CD-A5CA-B55AF60B0B04}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FullPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\sadat\Documents\Translink_project\New yourk bus transit\MTA_Bus_Wait_Assessment.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{996A3179-3200-431F-8037-1F4A1E393FAA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\sadat\Documents\Translink_project\New yourk bus transit</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C671CAF7-1D8E-44E7-9E9B-E6125151912A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2241FCAF-AD9E-414C-885B-4A1CF4C81637}"
+          SQLTask:SqlStatementSource="DELETE FROM Bus_Wait_Assessment" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{F93982BB-3C78-4191-8ED1-FA89C4677146}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{C934D759-634C-4AE5-BE60-99955AB0A746}"
+        DTS:ObjectName="{C934D759-634C-4AE5-BE60-99955AB0A746}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\sadat\Documents\Translink_project\New yourk bus transit" />
+            <FEFEProperty
+              FileSpec="MTA_Bus_Wait_Assessment*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{16D49679-ABE8-4EFC-A369-51D713D5714C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Bus_Wait_Assessment"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Bus_Wait_Assessment]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.SSISdemo]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.SSISdemo]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[month]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="month"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[month]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[borough]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="borough"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[borough]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[borough]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[day_type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="day_type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[day_type]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[day_type]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[trip_type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="trip_type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[trip_type]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[trip_type]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[route_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="route_id"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[route_id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[route_id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[period]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="period"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[period]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[period]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[number_of_trips_passing_wait]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="number_of_trips_passing_wait"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[number_of_trips_passing_wait]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[number_of_trips_passing_wait]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[number_of_scheduled_trips]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="number_of_scheduled_trips"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[number_of_scheduled_trips]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[number_of_scheduled_trips]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[wait_assessment]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="wait_assessment"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[wait_assessment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[wait_assessment]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].Columns[filefullpath]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="filefullpath"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[filefullpath]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[filefullpath]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="month" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[borough]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="borough" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[day_type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="day_type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[trip_type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="trip_type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[route_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="route_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[period]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="period" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[number_of_trips_passing_wait]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="number_of_trips_passing_wait" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[number_of_scheduled_trips]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="number_of_scheduled_trips" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[wait_assessment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="wait_assessment" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input].ExternalColumns[filefullpath]"
+                          dataType="wstr"
+                          length="150"
+                          name="filefullpath" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Bus_Wait_Assessment_file"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[MTA_Bus_Wait_File]"
+                      connectionManagerRefId="Package.ConnectionManagers[MTA_Bus_Wait_File]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[month]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[month]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[month]"
+                          name="month"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[borough]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[borough]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[borough]"
+                          name="borough"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[day_type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[day_type]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[day_type]"
+                          name="day_type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[trip_type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[trip_type]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[trip_type]"
+                          name="trip_type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[route_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[route_id]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[route_id]"
+                          name="route_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[period]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[period]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[period]"
+                          name="period"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[number_of_trips_passing_wait]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[number_of_trips_passing_wait]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[number_of_trips_passing_wait]"
+                          name="number_of_trips_passing_wait"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[number_of_scheduled_trips]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[number_of_scheduled_trips]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[number_of_scheduled_trips]"
+                          name="number_of_scheduled_trips"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[wait_assessment]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[wait_assessment]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].Columns[wait_assessment]"
+                          name="wait_assessment"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[month]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="month" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[borough]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="borough" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[day_type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="day_type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[trip_type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="trip_type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[route_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="route_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[period]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="period" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[number_of_trips_passing_wait]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="number_of_trips_passing_wait" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[number_of_scheduled_trips]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="number_of_scheduled_trips" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output].ExternalColumns[wait_assessment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="wait_assessment" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[filefullpath]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="150"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[filefullpath]"
+                          name="filefullpath"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::FullPath]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::FullPath]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{6D91E642-5297-40EE-A36B-521D2532A1E5}"
+          DTS:ObjectName="{6D91E642-5297-40EE-A36B-521D2532A1E5}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FullPath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5DED5FFC-1386-4AD0-85AF-92C94276A410}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="215.233315803774,76.9999995479981" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="22.1333173063073,21.9999985174338" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="214.4,118.4"
+          Size="214.4,161.6"
+          Id="Package\Foreach Loop Container"
+          TopLeft="191.433326458104,220.133331802554" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="298.133321130939,118.599999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101.533332254556"
+              Start="0,0"
+              End="0,94.0333322545559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,94.0333322545559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment_file"
+          TopLeft="188.333323043255,57.1999996022383" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment"
+          TopLeft="200.833322360285,311.99999783039" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\Derived Column"
+          TopLeft="199.999989072483,175.933332109915" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="290.733323043255,98.7999996022383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.3333339707724,77.1333325076766"
+              Start="0,0"
+              End="-14.3333339707724,69.6333325076766">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5666662538383" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5666662538383"
+                    Point2="0,38.5666662538383"
+                    Point3="-4,38.5666662538383" />
+                  <mssgle:LineSegment
+                    End="-10.3333339707724,38.5666662538383" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.3333339707724,38.5666662538383"
+                    Point2="-14.3333339707724,38.5666662538383"
+                    Point3="-14.3333339707724,42.5666662538383" />
+                  <mssgle:LineSegment
+                    End="-14.3333339707724,69.6333325076766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="276.399989072483,217.533332109915">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.2333332878024,94.4666657204755"
+              Start="0,0"
+              End="17.2333332878024,86.9666657204755">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2333328602377" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.2333328602377"
+                    Point2="0,47.2333328602377"
+                    Point3="4,47.2333328602377" />
+                  <mssgle:LineSegment
+                    End="13.2333332878024,47.2333328602377" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.2333332878024,47.2333328602377"
+                    Point2="17.2333332878024,47.2333328602377"
+                    Point3="17.2333332878024,51.2333328602377" />
+                  <mssgle:LineSegment
+                    End="17.2333332878024,86.9666657204755" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\Bus_Wait_Assessment">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
