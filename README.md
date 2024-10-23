@@ -1,5 +1,5 @@
 # SSIS-Foreach-Loop
-This example shows how to read files as a source data and transfer data to SQL database
+This is a sample to show how to read files as source data and transfer data to an SQL database
 
 Used components:
 - data Flow Task
